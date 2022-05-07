@@ -1,5 +1,8 @@
 package modele;
 
+/**
+ * Classe GrilleVirtuel
+ */
 public class GrilleVirtuelle implements I_modeleGrille {
     private int hauteur;
     private int largeur;
@@ -19,17 +22,36 @@ public class GrilleVirtuelle implements I_modeleGrille {
         return largeur;
     }
 
+    /**
+     * Méthode permettant d'ajouter une case de définition
+     * @param direction
+     * @param fleche
+     * @param definition
+     * @param x
+     * @param y
+     */
     public void addCaseDef(Fleche direction, String fleche, String definition, int x, int y){
         CaseDef caseDef1 = new CaseDef(direction, fleche, definition, x, y);
         cases[x][y] = caseDef1;
     }
 
+    /**
+     * Méthode permettant d'ajouter une case correspondant à une lettre de mot
+     * @param lettre
+     * @param x
+     * @param y
+     */
     public void addCaseLettre(char lettre, int x, int y){
         CaseLettre caseLettre1 = new CaseLettre(lettre);
         cases[x][y] = caseLettre1;
     }
 
-    //Méthode pour décomposer un mot et l'afficher
+    /**
+     * Méthode pour décomposer un mot et l'afficher
+     * @param mot
+     * @param x
+     * @param y
+     */
     public void decomposerMot(Mot mot, int x, int y){
         for(int i=0; i<=mot.getLongueurMot(); i++){
             char lettre = mot.getMot().charAt(i);
@@ -41,7 +63,10 @@ public class GrilleVirtuelle implements I_modeleGrille {
         }
     }
 
-    //Méthode d'affichage de la grille
+
+    /**
+     * Méthode d'affichager la grille du cross word
+     */
     public void afficherGrille() {
         for (int i = 0; i < largeur; i++) {
             System.out.print(i + " ");
@@ -65,7 +90,12 @@ public class GrilleVirtuelle implements I_modeleGrille {
         System.out.print("\n");
     }
 
-    //Méthode pour vérifier si une case est vide
+    /**
+     * Méthode pour vérifier si une case est vide
+     * @param x
+     * @param y
+     * @return
+     */
     public TypeCase TypeCase(int x, int y)
     {
         if (cases[x][y] instanceof CaseVide) {
@@ -80,7 +110,15 @@ public class GrilleVirtuelle implements I_modeleGrille {
         return null;
     }
 
-    //Méthode permettant de rechercher les cases disponibles dans une grille vide
+    /**
+     * Méthode permettant de rechercher les cases disponibles dans une grille vide
+     * @param x
+     * @param y
+     * @param hauteur
+     * @param largeur
+     * @param direction
+     * @return
+     */
     public int CaseDispo(int x, int y, int hauteur, int largeur, Fleche direction)
     {
         if (direction == Fleche.HD) {

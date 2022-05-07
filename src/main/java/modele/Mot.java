@@ -1,5 +1,8 @@
 package modele;
 
+/**
+ * Classe Mot
+ */
 public class Mot {
     private String Mot;
     private int longueurMot;
@@ -7,6 +10,14 @@ public class Mot {
     private int[][] positionDepartMot;
     private String def;
 
+    /**
+     * Méthode Constructeur de mot
+     * @param mot
+     * @param longueur
+     * @param direction
+     * @param x
+     * @param y
+     */
     public Mot(String mot, int longueur, String direction, int x, int y){
         Mot = mot;
         longueurMot = longueur;

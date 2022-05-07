@@ -1,5 +1,8 @@
 package modele;
 
+/**
+ * Classe CaseDef pour les définitions des mots
+ */
 public class CaseDef implements I_Case{
     private int nbMot;
     private Fleche[] directionDef;
@@ -8,6 +11,14 @@ public class CaseDef implements I_Case{
     private int[][] positionDef;
     private Mot[] mots;
 
+    /**
+     * Méthode Constructeur d'une case de définition de mot
+     * @param dirDef
+     * @param fleche
+     * @param def
+     * @param x
+     * @param y
+     */
     public CaseDef(Fleche dirDef, String fleche, String def, int x, int y)
     {
         directionDef[0] = dirDef;
