@@ -1,5 +1,7 @@
 package modele;
 
+import com.example.projectjavafx_crosswords.GrilleGraphiqueJFX;
+
 /**
  * Classe GrilleVirtuel
  */
@@ -20,6 +22,16 @@ public class GrilleVirtuelle implements I_modeleGrille {
 
     public int getLargeur(){
         return largeur;
+    }
+
+    @Override
+    public void addObservateur(GrilleGraphiqueJFX grilleGraphiqueJFX) {
+
+    }
+
+    @Override
+    public char[][] getTableauDeCases() {
+        return new char[0][];
     }
 
     /**
