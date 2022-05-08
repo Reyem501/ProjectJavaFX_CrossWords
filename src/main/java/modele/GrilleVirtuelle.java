@@ -3,7 +3,7 @@ package modele;
 import com.example.projectjavafx_crosswords.GrilleGraphiqueJFX;
 
 /**
- * Classe GrilleVirtuel
+ * Classe GrilleVirtuelle
  */
 public class GrilleVirtuelle implements I_modeleGrille {
     private int hauteur;
